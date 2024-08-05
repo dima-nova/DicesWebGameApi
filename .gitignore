@@ -1,2 +1,8 @@
 /.venv
 /.idea
+/config/__pycache__
+/authorization/__pycache__
+/game_rooms/__pycache__
+dump.rdb
+/authorization/migrations
+/game_rooms/migrations
