@@ -19,7 +19,7 @@ class UserSerializer(serializers.Serializer):
     """
 
     username = serializers.CharField(max_length=150, validators=[UniqueValidator(queryset=User.objects.all())])
-    password = serializers.CharField(max_length=500)
+    password = serializers.CharField(max_length=500, write_only=True)
     rank_points = serializers.IntegerField(required=False)
     image_number = serializers.IntegerField(required=False)
 
