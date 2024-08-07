@@ -38,7 +38,9 @@ AUTH_USER_MODEL = "authorization.User"
 INSTALLED_APPS = [
     "daphne", 
     "channels",
+    "redis",
     "rest_framework",
+
     "authorization",
     "game_rooms",
 
@@ -97,14 +99,15 @@ DATABASES = {
     }
 }
 
-CACHES = {
+
+CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379",
-    }
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -155,5 +158,7 @@ CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + REDIS_PORT + "/0"
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = 'json'
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
 SECONDS_BEFORE_START_GAME_ROOM = 10
+GAME_ROOMS_CHANNEL_GROUP_NAME = "rooms"

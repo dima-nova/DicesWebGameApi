@@ -1,6 +1,3 @@
-import random
-
-from celery.result import AsyncResult
 from rest_framework.views import APIView, Response
 from rest_framework import status
 from .serializers import RoomSerializer
@@ -10,6 +7,25 @@ from .tasks import start_room_timer
 
 
 class RoomApi(APIView):
+    """
+    API view for managing game rooms.
+
+    Methods:
+    - get(request, id_code=None): Handles GET requests to retrieve room details.
+        - If the room with the given `id_code` exists, returns a 200 OK response with the room data.
+        - If the room does not exist, returns a 404 Not Found response with an error message.
+        - Requires JWT authentication.
+
+    - post(request): Handles POST requests to create a new room.
+        - Expects `name` and `user` fields in the request data.
+        - If required fields are missing, returns a 400 Bad Request response with an error message.
+        - If the request data is valid, creates a new room, starts a room timer asynchronously, and returns a 201 Created response with a success message and the room data.
+        - If the data is invalid, returns a 400 Bad Request response with validation errors.
+        - Requires JWT authentication.
+
+    Raises:
+    - KeyError: If the `name` or `user` key is missing from the request data.
+    """
 
     @jwt_required
     def get(self, request, id_code=None):

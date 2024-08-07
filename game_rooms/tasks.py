@@ -1,5 +1,4 @@
 from config.celery import app
-import time
 from .models import RoomModel
 
 
@@ -13,3 +12,5 @@ def start_room_timer(room_id_code):
         return False
     
     return room.is_started
+
+

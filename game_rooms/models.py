@@ -5,7 +5,6 @@ from django.conf import settings
 import time
 from authorization.models import User
 
-
 class RoomModel(models.Model):
     """
     RoomModel represents a room in the application.
@@ -57,7 +56,7 @@ class RoomModel(models.Model):
         if not self.pk:
             self.created_at = timezone.now()
             self.delete_at = self.created_at + timezone.timedelta(seconds=settings.SECONDS_BEFORE_START_GAME_ROOM) 
-
+            
         super().save(*args, **kwargs)
 
         self.players_list.add(self.author.pk)
@@ -80,3 +79,4 @@ class RoomModel(models.Model):
 
         self.is_started = True
         self.save(update_fields=["is_started"])
+
