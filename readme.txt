@@ -108,3 +108,6 @@ When this is done all the dice are revealed.
 
     If you're using Windows, start the Celery worker with the following command:
         "celery -A config worker --loglevel=info -P eventlet"
+
+
+Thanks for reading. Good luck!
