@@ -2,7 +2,7 @@
 
 # Foreword
 
-Hi, my name is Dmytro and I am a backend developer from Ukraine. 🇺🇦
+Hi, my name is Dmytro and I am a backend developer from Ukraine. 🟨🟦
 I am just starting my way in the IT sphere and I am writing this 
 project for educational purposes 🎓📕. A lot of work has been done 
 in this project, and I have not regretted a drop of these efforts. 
