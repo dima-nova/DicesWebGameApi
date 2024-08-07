@@ -2,13 +2,13 @@
 
 # Foreword
 
-Hi, my name is Dmytro and I am a backend developer from Ukraine. 
+Hi, my name is Dmytro and I am a backend developer from Ukraine. 🇺🇦
 I am just starting my way in the IT sphere and I am writing this 
-project for educational purposes. A lot of work has been done 
+project for educational purposes 🎓📕. A lot of work has been done 
 in this project, and I have not regretted a drop of these efforts. 
 
 When creating this API, I wanted to implement a fairly simple 
-dice game. It is called "Liars Dice". The rules are given below. 
+dice game. It is called "Liars Dice". The rules are given below. 🎲
 
 P. S. I am also not against cooperation to create a frontend for the game.
 
